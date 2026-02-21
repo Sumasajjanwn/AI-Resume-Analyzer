@@ -25,13 +25,7 @@ st.markdown("""
 
 # Load NLP model
 import spacy
-import subprocess
-
-try:
-    nlp = spacy.load("en_core_web_sm")
-except:
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
-    nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm")
 
 uploaded_file = st.file_uploader("📄 Upload Resume (PDF)", type=["pdf"])
 job_description = st.text_area("📝 Paste Job Description Here")
